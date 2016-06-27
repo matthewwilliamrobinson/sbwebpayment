@@ -1,6 +1,7 @@
 <?php
-if (!defined('_PS_VERSION_'))
-    exit;
+if (!defined('_PS_VERSION_')) {
+	exit;
+}
 
 class sbwebpayment extends Module
 {
@@ -39,11 +40,9 @@ class sbwebpayment extends Module
 
     public function uninstall()
     {
-        if (!parent::uninstall() ||
-            !Configuration::deleteByName('SBWEBPAYMENT_NAME')
-        )
-        return false;
-
+        if (!parent::uninstall() || !Configuration::deleteByName('SBWEBPAYMENT_NAME')) {
+        	return false;
+	}
         return true;
     }
 
@@ -54,10 +53,9 @@ class sbwebpayment extends Module
         if (Tools::isSubmit('submit'.$this->name))
         {
             $my_module_name = strval(Tools::getValue('SBWEBPAYMENT_NAME'));
-            if (!$my_module_name
-                || empty($my_module_name)
-                || !Validate::isGenericName($my_module_name))
-                $output .= $this->displayError($this->l('Invalid Configuration value'));
+            if (!$my_module_name || empty($my_module_name) || !Validate::isGenericName($my_module_name)){
+		$output .= $this->displayError($this->l('Invalid Configuration value'));
+	    }
             else
             {
                 Configuration::updateValue('SBWEBPAYMENT_NAME', $my_module_name);
@@ -137,7 +135,7 @@ class sbwebpayment extends Module
             )
         );
         
-        //ppp($this->context->link->getModuleLink('sbwebpayment', 'display'));
+        //dd($this->context->link->getModuleLink('sbwebpayment', 'display'));
         return $this->display(__FILE__, 'sbwebpayment.tpl');
     }
 
