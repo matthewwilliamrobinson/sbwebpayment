@@ -1,5 +1,5 @@
 <?php
-class sbwebpaymentDisplayModuleFrontController extends ModuleFrontController
+class SbwebpaymentDisplayModuleFrontController extends ModuleFrontController
 {
   public function initContent()
   {
