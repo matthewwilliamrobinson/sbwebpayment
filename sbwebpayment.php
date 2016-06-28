@@ -3,7 +3,7 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-class sbwebpayment extends Module
+class SbWebPayment extends Module
 {
     public function __construct()
     {
@@ -52,7 +52,7 @@ class sbwebpayment extends Module
 
         if (Tools::isSubmit('submit'.$this->name))
         {
-            $my_module_name = strval(Tools::getValue('SBWEBPAYMENT_NAME'));
+            $my_module_name = cast(Tools::getValue('SBWEBPAYMENT_NAME'));
             if (!$my_module_name || empty($my_module_name) || !Validate::isGenericName($my_module_name)){
                 $output .= $this->displayError($this->l('Invalid Configuration value'));
             }

@@ -1,1 +1,1 @@
-{l s='Welcome to this page!' mod='mymodule'}
+{l s='Welcome to this page!' mod='sbwebpayment'}
