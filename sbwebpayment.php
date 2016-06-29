@@ -1,5 +1,5 @@
 <?php
-/*
+/**
 * 2007-2016 Sbwebstore LLC.
 *
 * NOTICE OF LICENSE
