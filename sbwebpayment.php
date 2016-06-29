@@ -47,7 +47,7 @@ class SbWebPayment extends Module
 
         $this->confirmUninstall = $this->l('Are you sure you want to uninstall?');
 
-        if (!Configuration::get('SBWEBPAYMENT_NAME')){
+        if (!Configuration::get('SBWEBPAYMENT_NAME')) {
             $this->warning = $this->l('No name provided');
         }
     }
@@ -80,8 +80,7 @@ class SbWebPayment extends Module
             $my_module_name = (string)Tools::getValue('SBWEBPAYMENT_NAME');
             if (!$my_module_name || empty($my_module_name) || !Validate::isGenericName($my_module_name)) {
                 $output .= $this->displayError($this->l('Invalid Configuration value'));
-            }
-            else {
+            } else {
                 Configuration::updateValue('SBWEBPAYMENT_NAME', $my_module_name);
                 $output .= $this->displayConfirmation($this->l('Settings updated'));
             }
